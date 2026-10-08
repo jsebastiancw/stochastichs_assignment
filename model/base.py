@@ -76,6 +76,7 @@ class BasicScenarioModel:
             "Std": [np.std(x, ddof=1) for x in annual_arrays], 
             "95th Percentile": [np.percentile(x, 95) for x in annual_arrays]
         }
+        
         return pd.DataFrame(metrics)
 
 
