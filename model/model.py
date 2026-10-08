@@ -9,9 +9,9 @@ class VesselArrivalModel:
     def __init__(self):
 
         # BAse arrival rates for different vessel types
-        self.base_lam_cargo = 7.863
+        self.base_lam_cargo = 2.048
         self.base_lam_tanker = 5.235
-        self.base_lam_container = 2.048
+        self.base_lam_container = 7.863
 
         # seasonality multipliers based on day of the week using the dataset analysis
         inter_arrival_hours = [1.567, 1.557, 1.580, 1.635, 1.578, 1.570, 1.606]
@@ -36,11 +36,11 @@ class VesselArrivalModel:
         """
 
         results = {
-
-            "Total_vessels": np.zeros(num_simulation),
-            "Total_cargo": np.zeros(num_simulation),
-
-        }
+                    "Total_vessels": np.zeros(num_simulation),
+                    "Total_cargo": np.zeros(num_simulation),
+                    "Daily_vessels": np.zeros(num_simulation * days),
+                    "Daily_cargo": np.zeros(num_simulation * days)
+                }
 
         # fitting each cargo type to a different distribution based on the dataset analysis
 
@@ -68,24 +68,37 @@ class VesselArrivalModel:
                 vessels_tanker += n_tanker
                 vessels_cargo += n_cargo
 
-                # draw cargo volumes for each vessel type based on the fitted distributions
-                if n_container > 0: cargo_container_total += np.sum(dist_container.rvs(size=n_container))
-                if n_tanker > 0: cargo_tanker_total += np.sum(dist_tanker.rvs(size=n_tanker))
-                if n_cargo > 0: cargo_cargo_total += np.sum(dist_cargo.rvs(size=n_cargo))
+                today_container = np.sum(dist_container.rvs(size=n_container)) if n_container > 0 else 0
+                today_tanker = np.sum(dist_tanker.rvs(size=n_tanker)) if n_tanker > 0 else 0
+                today_cargo = np.sum(dist_cargo.rvs(size=n_cargo)) if n_cargo > 0 else 0
 
+                cargo_container_total += today_container
+                cargo_tanker_total += today_tanker
+                cargo_cargo_total += today_cargo
+
+                day_index = i * days + day
+                results["Daily_vessels"][day_index] = n_container + n_tanker + n_cargo
+                results["Daily_cargo"][day_index] = today_container + today_tanker + today_cargo
 
             #aggregate results for this simulation
             results["Total_vessels"][i] = vessels_container + vessels_tanker + vessels_cargo
             results["Total_cargo"][i] = cargo_container_total + cargo_tanker_total + cargo_cargo_total
-
+        
         return results
 
 
 if __name__ == "__main__":
     model = VesselArrivalModel()
-    sim_data = model.simulate_scenario(days=365, num_simulation=10000)
-    print(f"Average total vessels over 365 days: {np.mean(sim_data['Total_vessels']):.2f}")
-
+    metrics = model.simulate_scenario(days=365, num_simulation=10000)
     
+    # Calculate the assignment requirements from the daily arrays
+    daily_cargo = metrics["Daily_cargo"]
     
+    print(f"Average Daily Cargo: {np.mean(daily_cargo):,.2f}")
+    print(f"Throughput Variability (Std Dev): {np.std(daily_cargo):,.2f}")
+    print(f"Extreme Outcome (99th Percentile): {np.percentile(daily_cargo, 99):,.2f}")
+    
+    congestion_prob = np.sum(daily_cargo > 650000) / len(daily_cargo)
+    print(f"Congestion Probability: {congestion_prob:.4%}")
 
+    daily_vessels = metrics["Daily_vessels"]
