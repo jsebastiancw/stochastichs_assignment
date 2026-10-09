@@ -1,0 +1,17 @@
+--- NEW TERMINAL SCENARIO RESULTS ---
+Average Daily Cargo: 458,164 tons
+Throughput Variability (Std Dev): 139,662 tons
+Extreme Outcome (99th Percentile): 820,852 tons
+--------------------------------------------------
+Baseline Congestion Probability (>650k tons): 9.2001%
+New Terminal Congestion Probability (>800k tons): 1.3562%
+Relative Congestion Reduction: 85.26%
+
+--- LARGER VESSEL SCENARIO: 20% increase in LARGER VESSELS ---
+--- LARGER VESSEL SCENARIO RESULTS ---
+Congestion Probability: 19.7867%
+Average Daily Cargo: 523,965 tons
+Throughput Variability (Std Dev): 151,471 tons
+Extreme Outcome (99th Percentile): 914,115 tons
+--------------------------------------------------
+Congestion Probability (>650k tons): 19.7867%
