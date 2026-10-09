@@ -15,3 +15,12 @@ Throughput Variability (Std Dev): 151,471 tons
 Extreme Outcome (99th Percentile): 914,115 tons
 --------------------------------------------------
 Congestion Probability (>650k tons): 19.7867%
+
+
+--- SEASONAL EFFECTS SCENARIO: WEEKLY AND MONTHLY VARIATIONS ---
+--- SEASONAL EFFECTS SCENARIO RESULTS ---
+Average Daily Cargo: 16,974 tons
+Throughput Variability (Std Dev): 324,942 tons
+Extreme Outcome (99th Percentile): 0 tons
+--------------------------------------------------
+Congestion Probability (>650k tons): 0.2740%
