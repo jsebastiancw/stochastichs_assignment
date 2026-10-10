@@ -18,7 +18,7 @@ class season_effects_model(VesselArrivalModel):
         self.monthly_multipliers = []
         for count, days in zip(monthly_seasonal_factors, days_in_month):
            monthly_daily_average = count / (days * 3)
-           self.monthly_multipliers.append(monthly_daily_average)
+           self.monthly_multipliers.append(monthly_daily_average / 15.14)
 
     # Simulate the seasonal effects scenario
     def simulate_seasonal_effects_scenario(self, days=365, num_simulation=10000):

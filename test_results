@@ -17,19 +17,10 @@ Extreme Outcome (99th Percentile): 914,115 tons
 Congestion Probability (>650k tons): 19.7867%
 
 
---- SEASONAL EFFECTS SCENARIO: WEEKLY AND MONTHLY VARIATIONS --- first
+ --- SEASONAL EFFECTS SCENARIO: WEEKLY AND MONTHLY VARIATIONS ---
 --- SEASONAL EFFECTS SCENARIO RESULTS ---
-Average Daily Cargo: 16,974 tons
-Throughput Variability (Std Dev): 324,942 tons
-Extreme Outcome (99th Percentile): 0 tons
+Average Daily Cargo: 458,824 tons
+Throughput Variability (Std Dev): 143,093 tons
+Extreme Outcome (99th Percentile): 830,960 tons
 --------------------------------------------------
-Congestion Probability (>650k tons): 0.2740%
-
-
- --- SEASONAL EFFECTS SCENARIO: WEEKLY AND MONTHLY VARIATIONS --- second
---- SEASONAL EFFECTS SCENARIO RESULTS ---
-Average Daily Cargo: 6,945,905 tons
-Throughput Variability (Std Dev): 724,902 tons
-Extreme Outcome (99th Percentile): 8,541,758 tons
---------------------------------------------------
-Congestion Probability (>650k tons): 100.0000%
+Congestion Probability (>650k tons): 9.7667%
