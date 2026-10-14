@@ -1,26 +1,113 @@
---- NEW TERMINAL SCENARIO RESULTS ---
-Average Daily Cargo: 458,164 tons
-Throughput Variability (Std Dev): 139,662 tons
-Extreme Outcome (99th Percentile): 820,852 tons
---------------------------------------------------
-Baseline Congestion Probability (>650k tons): 9.2001%
-New Terminal Congestion Probability (>800k tons): 1.3562%
-Relative Congestion Reduction: 85.26%
+----- BASE MODEL RESULTS -----
+   Variable         Mean       95% CI          Std  95th Percentile
+N_container 2.869569e+03     1.050004 5.357163e+01     2.958000e+03
+   N_tanker 1.911295e+03     0.853551 4.354850e+01     1.982000e+03
+    N_cargo 7.479410e+02     0.538344 2.746654e+01     7.930000e+02
+    N_total 5.528805e+03     1.475720 7.529186e+01     5.652000e+03
+S_container 4.720040e+07 18336.344895 9.355278e+05     4.872921e+07
+   S_tanker 9.759065e+07 45337.401613 2.313133e+06     1.013703e+08
+    S_cargo 2.238530e+07 17414.670584 8.885036e+05     2.385815e+07
+    S_total 1.671764e+08 52370.058428 2.671942e+06     1.715639e+08
 
---- LARGER VESSEL SCENARIO: 20% increase in LARGER VESSELS ---
+--- BASE MODEL DAILY & CONGESTION METRICS ---
+Average Daily Vessels: 15.15 (Std Dev: 3.89)
+Average Daily Cargo: 458,017.41 ± 143.48 tons
+Throughput Variability (Std Dev): 139,420.10 tons
+95th Percentile Daily Cargo: 701,807.36 tons
+Extreme Outcome (99th Percentile): 819,959.80 tons
+Congestion Probability (>650k tons): 9.1597% ± 0.0294% (33.43 days/year)
+Congestion Probability (>800k tons): 1.3399% (4.89 days/year)
+
+
+--- OUR MODEL ANNUAL RESULTS ---
+   Variable         Mean       95% CI          Std  95th Percentile
+N_container 2.872438e+03     1.043838 5.325707e+01     2.961000e+03
+   N_tanker 1.912481e+03     0.857082 4.372869e+01     1.986000e+03
+    N_cargo 7.477900e+02     0.529389 2.700962e+01     7.920000e+02
+    N_total 5.532709e+03     1.439296 7.343348e+01     5.654000e+03
+S_container 4.725471e+07 18274.373380 9.323660e+05     4.881242e+07
+   S_tanker 9.768265e+07 45747.105487 2.334036e+06     1.015647e+08
+    S_cargo 2.237564e+07 17132.667349 8.741157e+05     2.381986e+07
+    S_total 1.673130e+08 51902.661103 2.648095e+06     1.717117e+08
+
+--- OUR MODEL DAILY & CONGESTION RESULTS ---
+Average Daily Vessels: 15.16 (Std Dev: 3.90)
+Average Daily Cargo: 458,391.78 ± 142.20
+Throughput Variability (Std Dev): 139,651.07
+95th Percentile Daily Cargo: 702,533.47
+Extreme Outcome (99th Percentile): 820,948.46
+Congestion Probability (>650k tons): 9.2087% ± 0.0297% (33.61 days/year)
+Congestion Probability (>800k tons): 1.3582% (4.96 days/year)
+
+
+
+ --- LARGER VESSEL SCENARIO: 20% increase in LARGER VESSELS ---
+
+--- LARGER VESSEL SCENARIO ANNUAL RESULTS ---
+   Variable         Mean       95% CI          Std  95th Percentile
+N_container 2.872329e+03     1.051254 5.363542e+01     2.961000e+03
+   N_tanker 2.292766e+03     0.946030 4.826683e+01     2.374000e+03
+    N_cargo 8.977344e+02     0.590644 3.013488e+01     9.470000e+02
+    N_total 6.062830e+03     1.518435 7.747117e+01     6.193000e+03
+S_container 4.725344e+07 18363.545380 9.369156e+05     4.881525e+07
+   S_tanker 1.170916e+08 50206.000790 2.561531e+06     1.213469e+08
+    S_cargo 2.686990e+07 19098.282135 9.744021e+05     2.846690e+07
+    S_total 1.912150e+08 56439.102858 2.879546e+06     1.959768e+08
+
 --- LARGER VESSEL SCENARIO RESULTS ---
-Congestion Probability: 19.7867%
-Average Daily Cargo: 523,965 tons
-Throughput Variability (Std Dev): 151,471 tons
-Extreme Outcome (99th Percentile): 914,115 tons
+Average Daily Vessels: 16.61 (Std Dev: 4.09)
+Average Daily Cargo: 523,877 ± 155 tons
+Throughput Variability (Std Dev): 151,544 tons
+95th Percentile Daily Cargo: 787,735 tons
+Extreme Outcome (99th Percentile): 914,389 tons
 --------------------------------------------------
-Congestion Probability (>650k tons): 19.7867%
+Congestion Probability (>650k tons): 19.7729% ± 0.0405% (72.17 days/year)
+Congestion Probability (>800k tons): 4.3365% (15.83 days/year)
+
+
+
+--- NEW TERMINAL SCENARIO ANNUAL RESULTS ---
+   Variable         Mean       95% CI          Std  95th Percentile
+N_container 2.870971e+03     1.052383 5.369299e+01     2.960000e+03
+   N_tanker 1.911210e+03     0.855945 4.367068e+01     1.982050e+03
+    N_cargo 7.483380e+02     0.533052 2.719654e+01     7.930000e+02
+    N_total 5.530519e+03     1.467326 7.486356e+01     5.654000e+03
+S_container 4.722154e+07 18292.875605 9.333100e+05     4.874642e+07
+   S_tanker 9.760418e+07 45540.195332 2.323479e+06     1.014508e+08
+    S_cargo 2.239339e+07 17295.875741 8.824426e+05     2.386345e+07
+    S_total 1.672191e+08 52203.771062 2.663458e+06     1.716471e+08
+
+--- NEW TERMINAL SCENARIO RESULTS ---
+Average Daily Vessels: 15.15 (Std Dev: 3.90)
+Average Daily Cargo: 458,135 ± 143 tons
+Throughput Variability (Std Dev): 139,708 tons
+95th Percentile Daily Cargo: 702,551 tons
+Extreme Outcome (99th Percentile): 821,029 tons
+--------------------------------------------------
+Baseline Congestion Probability (>650k tons): 9.2178% ± 0.0300% (33.64 days/year)
+New Terminal Congestion Probability (>800k tons): 1.3594% ± 0.0118% (4.96 days/year)
+Relative Congestion Reduction: 85.25%
 
 
  --- SEASONAL EFFECTS SCENARIO: WEEKLY AND MONTHLY VARIATIONS ---
+
+--- SEASONAL EFFECTS SCENARIO ANNUAL RESULTS ---
+   Variable         Mean       95% CI          Std  95th Percentile
+N_container 2.875604e+03     1.048106 5.347480e+01     2.964000e+03
+   N_tanker 1.914043e+03     0.863112 4.403634e+01     1.987000e+03
+    N_cargo 7.485554e+02     0.530452 2.706390e+01     7.940000e+02
+    N_total 5.538203e+03     1.450742 7.401746e+01     5.659000e+03
+S_container 4.729995e+07 18286.827510 9.330014e+05     4.882447e+07
+   S_tanker 9.772948e+07 45836.781408 2.338611e+06     1.015759e+08
+    S_cargo 2.239859e+07 17274.144275 8.813339e+05     2.385508e+07
+    S_total 1.674280e+08 51951.498097 2.650587e+06     1.717899e+08
+
 --- SEASONAL EFFECTS SCENARIO RESULTS ---
-Average Daily Cargo: 458,824 tons
-Throughput Variability (Std Dev): 143,093 tons
-Extreme Outcome (99th Percentile): 830,960 tons
+Average Daily Vessels: 15.17 (Std Dev: 4.03)
+Average Daily Cargo: 458,707 ± 142 tons
+Throughput Variability (Std Dev): 143,102 tons
+95th Percentile Daily Cargo: 709,199 tons
+Extreme Outcome (99th Percentile): 830,743 tons
 --------------------------------------------------
-Congestion Probability (>650k tons): 9.7667%
+Congestion Probability (>650k tons): 9.7546% ± 0.0298% (35.60 days/year)
+Congestion Probability (>800k tons): 1.5437% (5.63 days/year)
