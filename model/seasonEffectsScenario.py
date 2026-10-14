@@ -80,13 +80,11 @@ class season_effects_model(VesselArrivalModel):
                 cargo_tanker_total += today_tanker
                 cargo_cargo_total += today_cargo
                 
-                # FIX BUG 1: Record daily values INSIDE the day loop, using day_index
                 results["Daily_cargo"][day_index] = today_container + today_tanker + today_cargo
                 results["Daily_vessels"][day_index] = n_container + n_tanker + n_cargo
                 results["S_total_matrix"][i, day] = today_container + today_tanker + today_cargo
                 day_index += 1
 
-            # FIX BUG 3: Record annual simulation totals
             annual_N_container[i] = vessels_container
             annual_N_tanker[i] = vessels_tanker
             annual_N_cargo[i] = vessels_cargo
