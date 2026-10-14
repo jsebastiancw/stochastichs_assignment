@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy import stats
-from model import VesselArrivalModel
+from model.model import VesselArrivalModel
 
 
 def new_terminal_scenario():
