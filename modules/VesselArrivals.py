@@ -55,7 +55,7 @@ print(f"Standard Deviation: {std_ia}")
 df['Month'] = df['Arrival_Date'].dt.month
 df['DayName'] = df['Arrival_Date'].dt.day_name()
 
-monthly_stats = df.groupby('Month')['Arrival_Date'].agg(['count', 'mean', 'std']).reset_index()
+monthly_stats = df.groupby('Month')['Inter_Arrival_Hours'].agg(['count', 'mean', 'std']).reset_index()
 
 #aggragetae day of week statistics
 dayofweekorder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
