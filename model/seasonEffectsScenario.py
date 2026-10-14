@@ -8,9 +8,14 @@ class season_effects_model(VesselArrivalModel):
     Class to simulate a scenario with seasonal effects on vessel arrivals.
     """
     
-    # Initialize the model with seasonal multipliers
+    # Initialize the model with both daily (day-of-week) and monthly seasonal multipliers
     def __init__(self):
         super().__init__()
+        # seasonality multipliers based on day of the week using the dataset analysis
+        inter_arrival_hours = [1.567, 1.557, 1.580, 1.635, 1.578, 1.570, 1.606]
+        self.daily_multipliers = [(24 / hours) / 15.14 for hours in inter_arrival_hours]
+
+        # monthly seasonality multipliers
         monthly_seasonal_factors = [1237, 1154, 1412, 1400, 1476, 1430, 1488, 1524, 1371, 1457, 1406, 1243]
         days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         self.monthly_multipliers = []

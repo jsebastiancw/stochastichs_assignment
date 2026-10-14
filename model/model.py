@@ -10,10 +10,6 @@ class VesselArrivalModel:
         self.base_lam_tanker = 5.235
         self.base_lam_container = 7.863
 
-        # seasonality multipliers based on day of the week using the dataset analysis
-        inter_arrival_hours = [1.567, 1.557, 1.580, 1.635, 1.578, 1.570, 1.606]
-        self.daily_multipliers = [(24 / hours) / 15.14 for hours in inter_arrival_hours]
-
         # Cargro volume parametets for container and tanker vessels using the log normal fit from the dataset analysis
         self.mu_container, self.sig_container = 9.6477, 0.3475
         self.mu_tanker, self.sig_tanker = 10.7971, 0.2959
@@ -57,13 +53,9 @@ class VesselArrivalModel:
             cargo_container_total, cargo_tanker_total, cargo_cargo_total = 0, 0, 0
             vessels_container, vessels_tanker, vessels_cargo = 0, 0, 0
             for day in range(days):
-                #Determine day of week
-                day_of_week = day % 7
-                multiplier = self.daily_multipliers[day_of_week]
-
-                n_container = stats.poisson.rvs(mu=self.base_lam_container * multiplier)
-                n_tanker = stats.poisson.rvs(mu=self.base_lam_tanker * multiplier)
-                n_cargo = stats.poisson.rvs(mu=self.base_lam_cargo * multiplier)
+                n_container = stats.poisson.rvs(mu=self.base_lam_container)
+                n_tanker = stats.poisson.rvs(mu=self.base_lam_tanker)
+                n_cargo = stats.poisson.rvs(mu=self.base_lam_cargo)
 
                 vessels_container += n_container
                 vessels_tanker += n_tanker
